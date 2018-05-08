@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<title>Change configuration</title>
+<!--
+Snapshot Template
+http://www.templatemo.com/tm-493-snapshot
+
+Zoom Slider
+https://vegas.jaysalvat.com/
+
+Caption Hover Effects
+http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
+-->
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/bootstrap.min.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/animate.min.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/font-awesome.min.css") }}">
+  	<link rel="stylesheet" href="{{ url_for("static", filename="css/component.css") }}">
+	
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/owl.theme.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/owl.carousel.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/vegas.min.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+
+	<!-- Google web font  -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+	
+</head>
+<body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+
+<!-- Preloader section -->
+
+<div class="preloader">
+     <div class="sk-spinner sk-spinner-pulse"></div>
+</div>
+
+
+<!-- Navigation section  -->
+
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="#top" class="navbar-brand smoothScroll">Make a change</a>
+      </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#top" class="smoothScroll"><span>Home</span></a></li>
+            <li><a href="#about" class="smoothScroll"><span>Stop</span></a></li>
+            <li><a href="#gallery" class="smoothScroll"><span>Point1</span></a></li>
+            <li><a href="#contact" class="smoothScroll"><span>Point2</span></a></li>
+            <li><a href="#fist" class="smoothscroll">Fist</a></li>
+            <li><a href="#grab" class="smoothscroll">Grab</a></li>
+          </ul>
+       </div>
+
+    </div>
+  </div>
+
+
+<!-- Home section -->
+
+<section id="home">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Make a change</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Feel free to change any action in any state, it's all yours.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- About section -->
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" style="margin-bottom: 100px">
+        <div class="about-thumb">
+          <h1 style='display: inline-block;width: 600px'>Sign: Stop</h1><a style='font-size: 15px;'  data-toggle="collapse"  data-target="#demo">(SHOW)</a>
+          <form id='demo' class="collapse" action="{{ url_for('update', id=0) }}" method="POST">
+              <div class="form-group">
+                  <label for="#action00">Aborted:</label>
+                  <select name="action00" id="action00" style="margin-left:100px" data-value="{{ confist.0.0 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action10">Playing :</label>
+                  <select name="action10" id="action10" style="margin-left:100px" data-value="{{ confist.0.1 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action20">Paused  :</label>
+                  <select name="action20" id="action20" style="margin-left:100px" data-value="{{ confist.0.2 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <input type="submit" value="Save" style="margin-left: 300px">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img">
+        <img src="{{ url_for('static', filename="images/stop.jpg") }}" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery section -->
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" style="margin-bottom: 200px;">
+        <div class="about-thumb">
+          <h1 style='display: inline-block;width: 600px'>Sign: Point1</h1><a style='font-size: 15px'  data-toggle="collapse"  data-target="#demo1">(SHOW)</a>
+          <form id='demo1' class="collapse" action="{{ url_for('update', id=1) }}" method="POST">
+              <div class="form-group">
+                  <label for="#action01">Aborted:</label>
+                  <select name="action01" id="action01" style="margin-left:100px" data-value="{{ confist.1.0 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action11">Playing :</label>
+                  <select name="action11" id="action11" style="margin-left:100px" data-value="{{ confist.1.1 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action21">Paused  :</label>
+                  <select name="action21" id="action21" style="margin-left:100px" data-value="{{ confist.1.2 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <input type="submit" value="Save" style="margin-left: 300px">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img">
+        <img src="{{ url_for('static', filename="images/point1.jpg") }}" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact section -->
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" style="margin-bottom: 200px;">
+        <div class="about-thumb">
+          <h1 style='display: inline-block;width: 600px'>Sign: Point2</h1><a style='font-size: 15px'  data-toggle="collapse"  data-target="#demo2">(SHOW)</a>
+           <form id='demo2' class="collapse" action="{{ url_for('update', id=2) }}" method="POST">
+              <div class="form-group">
+                  <label for="#action02">Aborted:</label>
+                  <select name="action02" id="action02" style="margin-left:100px" data-value="{{ confist.2.0 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action12">Playing :</label>
+                  <select name="action12" id="action12" style="margin-left:100px" data-value="{{ confist.2.1 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action22">Paused  :</label>
+                  <select name="action22" id="action22" style="margin-left:100px" data-value="{{ confist.2.2 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+               <input type="submit" value="Save" style="margin-left: 300px">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img">
+        <img src="{{ url_for('static', filename="images/point2.jpg") }}" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer section -->
+
+<section id="fist">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" style="margin-bottom: 200px;">
+        <div class="about-thumb">
+          <h1 style='display: inline-block;width: 600px'>Sign: Fist</h1><a style='font-size: 15px'  data-toggle="collapse"  data-target="#demo3">(SHOW)</a>
+          <form id='demo3' class="collapse" action="{{ url_for('update', id=3) }}" method="POST">
+              <div class="form-group">
+                  <label for="#action03">Aborted:</label>
+                  <select name="action03" id="action03" style="margin-left:100px" data-value="{{ confist.3.0 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action13">Playing :</label>
+                  <select name="action13" id="action13" style="margin-left:100px" data-value="{{ confist.3.1 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action23">Paused  :</label>
+                  <select name="action23" id="action23" style="margin-left:100px" data-value="{{ confist.3.2 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <input type="submit" value="Save" style="margin-left: 300px">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img">
+        <img src="{{ url_for('static', filename="images/fist.jpg") }}" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+
+    </div>
+  </div>
+</section>
+
+<section id="grab">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" style="margin-bottom: 100px;">
+        <div class="about-thumb">
+          <h1 style='display: inline-block;width: 600px'>Sign: Grab</h1><a style='font-size: 15px'  data-toggle="collapse"  data-target="#demo4">(SHOW)</a>
+          <form id='demo4' class="collapse" action="{{ url_for('update', id=4) }}" method="POST">
+              <div class="form-group">
+                  <label for="#action04">Aborted:</label>
+                  <select name="action04" id="action04" style="margin-left:100px" data-value="{{ confist.4.0 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlaylistNext">PlaylistNext</option>
+                      <option  value="com.usthb.ai.player.PlaylistPrev">PlaylistPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player   .VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action14">Playing :</label>
+                  <select name="action14" id="action14" style="margin-left:100px" data-value="{{ confist.4.1 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlayListNext">PlayListNext</option>
+                      <option  value="com.usthb.ai.player.PlayListPrev">PlayListPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="#action24">Paused  :</label>
+                  <select name="action24" id="action24" style="margin-left:100px" data-value="{{ confist.4.2 }}">
+                      <option  value="com.usthb.ai.player.Start">Start</option>
+                      <option  value="com.usthb.ai.player.Pause">Pause</option>
+                      <option  value="com.usthb.ai.player.Resume">Resume</option>
+                      <option  value="com.usthb.ai.player.Play">Play</option>
+                      <option  value="com.usthb.ai.player.Abort">Abort</option>
+                      <option  value="com.usthb.ai.player.Seek">Seek</option>
+                      <option  value="com.usthb.ai.player.RevertSeek">RevertSeek</option>
+                      <option  value="com.usthb.ai.player.PlayListNext">PlayListNext</option>
+                      <option  value="com.usthb.ai.player.PlayListPrev">PlayListPrev</option>
+                      <option  value="com.usthb.ai.player.VolumeUp">VolumeUp</option>
+                      <option  value="com.usthb.ai.player.VolumeDown">VolumeDown</option>
+                      <option  value="com.usthb.ai.player.SpeedUp">SpeedUp</option>
+                      <option  value="com.usthb.ai.player.SpeedDown">SpeedDown</option>
+                      <option  value="com.usthb.ai.player.None">None</option>
+                  </select>
+              </div>
+              <input type="submit" value="Save" style="margin-left: 300px">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-Holiguenimg">
+        <img src="{{ url_for('static', filename="images/grab.jpg") }}" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Back top -->
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Javascript  -->
+<script src="{{ url_for('static', filename="js/jquery.js") }}"></script>
+<script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/vegas.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/modernizr.custom.js") }}"></script>
+<script src="{{ url_for('static', filename="js/toucheffects.js") }}"></script>
+<script src="{{ url_for('static', filename="js/owl.carousel.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/smoothscroll.js") }}"></script>
+<script src="{{ url_for('static', filename="js/wow.min.js") }}"></script>
+<script src="{{ url_for('static', filename="js/custom.js") }}"></script>
+<script>
+    $("select")
+    .map(function () {
+        var value = $( this ).attr("data-value")
+        for (i=0;i<14;i++){
+            if (this[i].value == value){
+                $("#"+this.id + " " + "option"+"["+ "value=" + '"' + this[i].value + '"' + "]").attr("selected", "selected")
+            }
+        }
+
+    })
+    $("a[data-toggle='collapse']").click(function () {
+        if (this.text == "(SHOW)"){
+            this.text = "(HIDE)"
+        }
+        else if (this.text == "(HIDE)") {
+            this.text = "(SHOW)"
+        }
+    });
+
+</script>
+</body>
+</html>

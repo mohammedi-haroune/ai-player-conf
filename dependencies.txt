@@ -1,0 +1,9 @@
+Flask==1.0.1
+Jinja2==2.10
+MarkupSafe==1.0
+Werkzeug==0.14.1
+click==6.7
+itsdangerous==0.24
+pyhocon==0.3.39
+pyparsing==2.2.0
+setuptools==28.8.0
