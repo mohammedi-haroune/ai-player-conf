@@ -30,8 +30,8 @@ def save_hocon(confist, path):
 
 def listactions(conf):
     k = [["", "", ""], ["", "", ""], ["", "", ""], ["", "", ""], ["", "", ""]]
-    signs = ['stop', 'point1', 'point2', 'fist', 'grab']
-    states = ['aborted', 'playing', 'paused']
+    signs = session['confist']['gestures']
+    states = session['confist']['states']
     for i in range(0, 5):
         for x in range(0, 3):
             c = conf[states[x]][signs[i]]
@@ -57,8 +57,8 @@ def path_required(f):
 
 def hocon_checker(conf):
     actions = session['confist']['actions']
-    signs = ['stop', 'point1', 'point2', 'fist', 'grab']
-    states = ['aborted', 'playing', 'paused']
+    signs = session['confist']['gestures']
+    states = session['confist']['states']
     for i in range(0, 5):
         for x in range(0, 3):
             c = conf[states[x]][signs[i]]

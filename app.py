@@ -25,6 +25,7 @@ def display():
 @app.route('/home', methods=['GET'])
 @path_required
 def home():
+    updates()
     confsec = listactions(session['confist'])
     return render_template('index.html', confist=confsec)
 
@@ -32,8 +33,8 @@ def home():
 @app.route('/update/<int:id>', methods=['POST'])
 def update(id):
     conf = session['confist']
-    states = ['aborted', 'playing', 'paused']
-    sings = [conf['gestures'][0], conf['gestures'][1], conf['gestures'][2], conf['gestures'][3], conf['gestures'][4]]
+    states = conf['states']
+    sings = conf['gestures']
     for x in range(0, 3):
         session['confist'][states[x]][sings[id]] = session['confist']['actions'][0][:20] + request.form["action" + str(x) + str(id)]
     if hocon_checker(session['confist']):
