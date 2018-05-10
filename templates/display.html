@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}">
+    <meta charset="UTF-8">
+    <title>Choose file</title>
+</head>
+<body>
+    <form id="regForm" enctype=multipart/form-data action="{{ url_for('display') }}" method='POST'>
+        <label for="setting">File Path:</label>
+        <input id="setting" name="setting" type="text" style="width: 50%;" required placeholder="example:/home/settings.conf">
+        <input type="submit">
+        {% if error %}
+            <script>document.getElementById('setting').style.border = "1px solid red"</script>
+            <div style="width: 15%;margin: 0px; color: red; font-size: 15px">
+              <strong>This path is invalid.</strong>
+            </div>
+        {% endif %}
+    </form>
+</body>
+</html>

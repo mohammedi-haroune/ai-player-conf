@@ -28,36 +28,8 @@ $(document).ready(function() {
     });
 
 
- /* Home Slideshow Vegas
-  -----------------------------------------------*/
-  $(function() {
-    $('body').vegas({
-        slides: [
-            { src: 'images/slide-img1.jpg' },
-            { src: 'images/slide-img2.jpg' },
-            { src: 'images/slide-img3.jpg' }
-        ],
-        timer: false,
-        transition: [ 'zoomIn', ],
-        animation: ['kenburns']
-    });
-  });
 
 
-  /* Team carousel
-  -----------------------------------------------*/
-  $(document).ready(function() {
-      $("#team-carousel").owlCarousel({
-          items : 3,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3],
-          slideSpeed: 300,
-          itemsDesktop : [1199,2],
-          itemsTablet: [768,1],
-          itemsTabletSmall: [985,2],
-          itemsMobile : [479,1],
-      });
-    });
     
 
     /* Back to Top
@@ -81,3 +53,42 @@ $(document).ready(function() {
   new WOW({ mobile: false }).init();
 
   });
+
+$("select")
+    .map(function () {
+        var value = $( this ).attr("data-value");
+        for (i=0;i<14;i++){
+            if (this[i].value === value){
+                $("#"+this.id + " " + "option"+"["+ "value=" + '"' + this[i].value + '"' + "]").attr("selected", "selected")
+            }
+        }
+
+    });
+
+    $("a[data-toggle='collapse']").click(function () {
+        if (this.text === "(SHOW)"){
+            this.text = "(HIDE)"
+        }
+        else if (this.text === "(HIDE)") {
+            this.text = "(SHOW)"
+        }
+    });
+    $(document).ready(function () {
+        var id = $('.preloader').attr("data-id");
+        var ids = ['#stop', '#point1', '#point2', '#fist', '#grab'];
+        $(".navbar-right a[href]")
+            .map(function () {
+                var href = $( this ).attr("href");
+                if (href === ids[id]){
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top - 49
+                    }, 1000);
+                    $(href + " h1").append('<span class="badge badge-success">SAVED</span>')
+                    $.ajax({
+                         url: "./set_option",
+                         type: "POST",
+                   });
+                }
+            })
+    });

@@ -16,7 +16,7 @@ body {
     position: relative;
 }
 
-html,body {
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -65,7 +65,13 @@ p {
 
 
 
-
+a {
+  color: #e44c65;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none !important;
+}
 a:hover, a:active, a:focus {
   color: #e44c65;
   outline: none;
@@ -322,8 +328,7 @@ a:hover, a:active, a:focus {
 }
 
  .about-img img {
-  border: 8px solid #ffffff;
-  position: absolute;
+     position: absolute;
   left: -120px;
   padding: 12px;
 }
@@ -439,11 +444,11 @@ footer {
 
 
  input {
-  height: 30px;
+  height: 55px;
 }
 
  input[type="submit"] {
-  background: #7e65e4;
+  background: #e44c65;
   border:none;
   color: #ffffff;
   font-weight: 400;
@@ -523,6 +528,20 @@ footer {
   border-radius: 100%;
 }
 
+.alert-popup {
+  box-shadow: 1px 1.732px 12px 0px rgba( 0, 0, 0, .14 ), 1px 1.732px 3px 0px rgba( 0, 0, 0, .12 );
+  transition : all 1s ease;
+  bottom: 2em;
+  right: 2em;
+  color: #222;
+  font-size: 26px;
+  display: none;
+  position: fixed;
+  text-decoration: none;
+  line-height: 35px;
+  text-align: center;
+}
+
 .go-top:hover {
   background: #e44c65;
   color: #ffffff;
@@ -588,4 +607,11 @@ footer {
     padding-bottom: 80px;
   }
 
+}
+h1{
+text-transform: none !important;
+}
+
+.badge {
+    background: green;
 }
